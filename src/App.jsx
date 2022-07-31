@@ -5,12 +5,23 @@ import { Layout } from './components/index'
 const inicialState = [0, 0, 0, 0]
 
 const Cuadrado = styled.div`
+  position:absolute;
   width:250px;
   height:250px;
   border-radius: ${prop => prop.border.toString().replaceAll(',', '% ').concat('%')};
   background-color: #8BC6EC;
   background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 
+`
+const OutlineSquare = styled.div`
+  position:absolute;
+  width:248px;
+  height:248px;
+  border:1px dotted gray;
+`
+
+const WrapeerSquare = styled.div`
+  position:relative;
 `
 
 function App() {
@@ -48,7 +59,10 @@ function App() {
 
   return (
     <Layout>
-      <Cuadrado border={border} />
+      <WrapeerSquare>
+        <OutlineSquare />
+        <Cuadrado border={border} />
+      </WrapeerSquare>
       <form >
         <label htmlFor='a'>a</label>
         <input type="number" name='a' value={border[0]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
