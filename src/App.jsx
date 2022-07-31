@@ -25,6 +25,7 @@ const OutlineSquare = styled.div`
 `
 
 const WrapeerSquare = styled.div`
+  font-weight:bold ;
   position: relative;
   display: grid;
   grid-template-columns: 30px repeat(2, 1fr) 30px;
@@ -32,27 +33,32 @@ const WrapeerSquare = styled.div`
 `
 
 const ATop = styled.div`
+  color:#de36c0;
   display: flex;
   justify-content: center;
   align-items: center;
   grid-column: 2 / 2;
   grid-row: 1;
 `
-const BTop = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-column: 3 / 3;
-  grid-row: 1;
-`
 const ALeft = styled.div`
+  color:#de36c0;
   display: flex;
   justify-content: center;
   align-items: center;
   grid-column: 1 / 1;
   grid-row: 2;
 `
+const BTop = styled.div`
+  color:#9536de;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 3 / 3;
+  grid-row: 1;
+`
+
 const BRight = styled.div`
+  color:#9536de;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,27 +67,33 @@ const BRight = styled.div`
 `
 
 const DLeft = styled.div`
+  color:#deb536;
   display: flex;
   justify-content: center;
   align-items: center;
   grid-column: 1 / 1;
   grid-row: 3;
 `
-const CRight = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-column: 4/ 4;
-  grid-row: 3;
-`
 const DButton = styled.div`
+  color:#deb536;
   display: flex;
   justify-content: center;
   align-items: center;
   grid-column: 2 / 2;
   grid-row: 4;
 `
+
+const CRight = styled.div`
+  color:#36afde;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 4/ 4;
+  grid-row: 3;
+`
+
 const CButton = styled.div`
+  color:#36afde;
   display: flex;
   justify-content: center;
   align-items: center;
