@@ -2,9 +2,11 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { Layout } from './components/index'
 
-const inicialState = [0, 0, 0, 0]
+const inicialState = [10, 10, 10, 10]
 
 const Cuadrado = styled.div`
+  grid-column: 2 / 4;
+  grid-row: 2/4;
   width:250px;
   height:250px;
   border-radius: ${prop => prop.border.toString().replaceAll(',', '% ').concat('%')};
@@ -13,6 +15,8 @@ const Cuadrado = styled.div`
 
 `
 const OutlineSquare = styled.div`
+ grid-column: 2 / 4;
+  grid-row: 2/4;
   position:absolute;
   width:248px;
   height:248px;
@@ -21,7 +25,68 @@ const OutlineSquare = styled.div`
 `
 
 const WrapeerSquare = styled.div`
-  position:relative;
+  position: relative;
+  display: grid;
+  grid-template-columns: 30px repeat(2, 1fr) 30px;
+  grid-template-rows: 30px repeat(2, 1fr) 30px;
+`
+
+const ATop = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2 / 2;
+  grid-row: 1;
+`
+const BTop = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 3 / 3;
+  grid-row: 1;
+`
+const ALeft = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / 1;
+  grid-row: 2;
+`
+const BRight = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 4 / 4;
+  grid-row: 2;
+`
+
+const DLeft = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / 1;
+  grid-row: 3;
+`
+const CRight = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 4/ 4;
+  grid-row: 3;
+`
+const DButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2 / 2;
+  grid-row: 4;
+`
+const CButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 3/ 3;
+  grid-row: 4;
 `
 
 function App() {
@@ -60,8 +125,16 @@ function App() {
   return (
     <Layout>
       <WrapeerSquare>
+        <ATop><p>a</p></ATop>
+        <BTop><p>b</p></BTop>
+        <ALeft><p>a</p></ALeft>
+        <BRight><p>b</p></BRight>
         <OutlineSquare />
         <Cuadrado border={border} />
+        <DLeft><p>d</p></DLeft>
+        <CRight><p>c</p></CRight>
+        <DButton><p>d</p></DButton>
+        <CButton><p>c</p></CButton>
       </WrapeerSquare>
       <form >
         <label htmlFor='a'>a</label>
