@@ -8,7 +8,9 @@ const Cuadrado = styled.div`
   width:250px;
   height:250px;
   border-radius: ${prop => prop.border.toString().replaceAll(',', '% ').concat('%')};
-  background-color:red;
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+
 `
 
 function App() {
