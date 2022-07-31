@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import { Layout } from './components/index'
 
 const inicialState = [0, 0, 0, 0]
 
@@ -44,7 +45,7 @@ function App() {
   }
 
   return (
-    <>
+    <Layout>
       <Cuadrado border={border} />
       <form >
         <label htmlFor='a'>a</label>
@@ -58,7 +59,7 @@ function App() {
       </form>
       <p>{message}</p>
       <button onClick={() => handleCopy()}>Copiar</button>
-    </>
+    </Layout>
   )
 }
 
