@@ -5,7 +5,6 @@ import { Layout } from './components/index'
 const inicialState = [0, 0, 0, 0]
 
 const Cuadrado = styled.div`
-  position:absolute;
   width:250px;
   height:250px;
   border-radius: ${prop => prop.border.toString().replaceAll(',', '% ').concat('%')};
@@ -18,6 +17,7 @@ const OutlineSquare = styled.div`
   width:248px;
   height:248px;
   border:1px dotted gray;
+  z-index:-9999;
 `
 
 const WrapeerSquare = styled.div`
