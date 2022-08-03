@@ -26,7 +26,6 @@ const OutlineSquare = styled.div`
 `
 
 const WrapeerSquare = styled.div`
-  font-weight:bold ;
   position: relative;
   display: grid;
   grid-template-columns: 30px repeat(2, 1fr) 30px;
@@ -35,6 +34,7 @@ const WrapeerSquare = styled.div`
 
 const P = styled.p`
   color:${prop => prop.color};
+  font-weight:bold ;
 `
 
 const ATop = styled.div`
@@ -52,7 +52,6 @@ const ALeft = styled.div`
   grid-row: 2;
 `
 const BTop = styled.div`
-  color:#9536de;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +60,6 @@ const BTop = styled.div`
 `
 
 const BRight = styled.div`
-  color:#9536de;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +68,6 @@ const BRight = styled.div`
 `
 
 const DLeft = styled.div`
-  color:#deb536;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,7 +75,6 @@ const DLeft = styled.div`
   grid-row: 3;
 `
 const DButton = styled.div`
-  color:#deb536;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,10 +170,10 @@ function App() {
         <BRight><P color='#9536de'>b</P></BRight>
         <OutlineSquare />
         <Cuadrado border={border} />
-        <DLeft><p>d</p></DLeft>
-        <CRight><p>c</p></CRight>
-        <DButton><p>d</p></DButton>
-        <CButton><p>c</p></CButton>
+        <DLeft><P color='#deb536'>d</P></DLeft>
+        <CRight><P color='#36afde'>c</P></CRight>
+        <DButton><P color='#deb536'>d</P></DButton>
+        <CButton><P color='#36afde'>c</P></CButton>
       </WrapeerSquare>
       <Form >
         <InputGroup>
@@ -194,21 +190,27 @@ function App() {
             <Input type="number" name='b' value={border[1]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
             <p>%</p>
           </WrapInput>
-          <label htmlFor='b'>b</label>
+          <P color='#9536de'>
+            <label htmlFor='b'>b</label>
+          </P>
         </InputGroup>
         <InputGroup>
           <WrapInput>
             <Input type="number" name='c' value={border[2]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
             <p>%</p>
           </WrapInput>
-          <label htmlFor='c'>c</label>
+          <P color='#deb536'>
+            <label htmlFor='c'>c</label>
+          </P>
         </InputGroup>
         <InputGroup>
           <WrapInput>
             <Input type="number" name='d' value={border[3]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
             <p>%</p>
           </WrapInput>
-          <label htmlFor='d'>d</label>
+          <P color='#36afde'>
+            <label htmlFor='d'>d</label>
+          </P>
         </InputGroup>
       </Form>
       <p>{message}</p>
