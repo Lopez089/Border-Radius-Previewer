@@ -6,6 +6,9 @@ const inicialState = [10, 10, 10, 10]
 
 
 const Cuadrado = styled.div`
+  display: grid;
+  justify-content:center;
+  align-items:center;
   grid-column: 2 / 4;
   grid-row: 2/4;
   width:250px;
@@ -164,7 +167,7 @@ function App() {
     //css.select();
     //copyText.setSelectionRange(0, 99999); /* For mobile devices */
     navigator.clipboard.writeText(css)
-    setMessage('Copiado!!!')
+    setMessage('Css copiado!!!')
     setTimeout(() => setMessage(''), 3000)
 
 
@@ -178,7 +181,9 @@ function App() {
         <ALeft><P color='#de36c0'>a</P></ALeft>
         <BRight><P color='#9536de'>b</P></BRight>
         <OutlineSquare />
-        <Cuadrado border={border} />
+        <Cuadrado border={border} >
+          <P color='#9536de'>{message}</P>
+        </Cuadrado>
         <DLeft><P color='#deb536'>d</P></DLeft>
         <CRight><P color='#36afde'>c</P></CRight>
         <DButton><P color='#deb536'>d</P></DButton>
@@ -222,7 +227,6 @@ function App() {
           </P>
         </InputGroup>
       </Form>
-      <p>{message}</p>
       <Button onClick={() => handleCopy()}>Copiar</Button>
     </Layout>
   )
