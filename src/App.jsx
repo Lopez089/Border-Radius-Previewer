@@ -127,6 +127,15 @@ const Input = styled.input`
     -webkit-appearance: none;
   }
 `
+const Button = styled.button`
+  font-family: 'Open Sans', sans-serif;
+  color:white;
+  background-color:#36AFDE;
+  border-radius: .5rem;
+  border:1px solid #8BC6EC;
+  padding:.5rem 2rem;
+  display:grid;
+  `
 
 function App() {
   const [border, setBorder] = useState(inicialState)
@@ -214,7 +223,7 @@ function App() {
         </InputGroup>
       </Form>
       <p>{message}</p>
-      <button onClick={() => handleCopy()}>Copiar</button>
+      <Button onClick={() => handleCopy()}>Copiar</Button>
     </Layout>
   )
 }
