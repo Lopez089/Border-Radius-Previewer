@@ -4,6 +4,7 @@ import { Layout } from './components/index'
 
 const inicialState = [10, 10, 10, 10]
 
+
 const Cuadrado = styled.div`
   grid-column: 2 / 4;
   grid-row: 2/4;
@@ -32,8 +33,11 @@ const WrapeerSquare = styled.div`
   grid-template-rows: 30px repeat(2, 1fr) 30px;
 `
 
+const P = styled.p`
+  color:${prop => prop.color};
+`
+
 const ATop = styled.div`
-  color:#de36c0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +45,6 @@ const ATop = styled.div`
   grid-row: 1;
 `
 const ALeft = styled.div`
-  color:#de36c0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,6 +103,34 @@ const CButton = styled.div`
   grid-column: 3/ 3;
   grid-row: 4;
 `
+const InputGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+`
+const Form = styled.form`
+  display: flex;
+  justify-content: space-around;
+  color: #c3c3c3;
+  font-size:1.2rem;
+`
+const WrapInput = styled.div`
+  display:flex;
+  align-items:center;
+`
+const Input = styled.input`
+  text-align: right;
+  width: 21px;
+  border: none ;
+  outline: none;
+  font-family: 'Open Sans', sans-serif;
+  color: #c3c3c3;
+  font-size:1.2rem;
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+`
 
 function App() {
   const [border, setBorder] = useState(inicialState)
@@ -137,10 +168,10 @@ function App() {
   return (
     <Layout>
       <WrapeerSquare>
-        <ATop><p>a</p></ATop>
-        <BTop><p>b</p></BTop>
-        <ALeft><p>a</p></ALeft>
-        <BRight><p>b</p></BRight>
+        <ATop><P color='#de36c0'>a</P></ATop>
+        <BTop><P color='#9536de'>b</P></BTop>
+        <ALeft><P color='#de36c0'>a</P></ALeft>
+        <BRight><P color='#9536de'>b</P></BRight>
         <OutlineSquare />
         <Cuadrado border={border} />
         <DLeft><p>d</p></DLeft>
@@ -148,16 +179,38 @@ function App() {
         <DButton><p>d</p></DButton>
         <CButton><p>c</p></CButton>
       </WrapeerSquare>
-      <form >
-        <label htmlFor='a'>a</label>
-        <input type="number" name='a' value={border[0]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
-        <label htmlFor='b'>b</label>
-        <input type="number" name='b' value={border[1]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
-        <label htmlFor='c'>c</label>
-        <input type="number" name='c' value={border[2]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
-        <label htmlFor='d'>d</label>
-        <input type="number" name='d' value={border[3]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
-      </form>
+      <Form >
+        <InputGroup>
+          <WrapInput>
+            <Input type="number" name='a' value={border[0]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
+            <p>%</p>
+          </WrapInput>
+          <P color='#de36c0'>
+            <label htmlFor='a'>a</label>
+          </P>
+        </InputGroup>
+        <InputGroup>
+          <WrapInput>
+            <Input type="number" name='b' value={border[1]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
+            <p>%</p>
+          </WrapInput>
+          <label htmlFor='b'>b</label>
+        </InputGroup>
+        <InputGroup>
+          <WrapInput>
+            <Input type="number" name='c' value={border[2]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
+            <p>%</p>
+          </WrapInput>
+          <label htmlFor='c'>c</label>
+        </InputGroup>
+        <InputGroup>
+          <WrapInput>
+            <Input type="number" name='d' value={border[3]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
+            <p>%</p>
+          </WrapInput>
+          <label htmlFor='d'>d</label>
+        </InputGroup>
+      </Form>
       <p>{message}</p>
       <button onClick={() => handleCopy()}>Copiar</button>
     </Layout>
