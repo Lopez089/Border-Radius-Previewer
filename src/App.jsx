@@ -109,7 +109,7 @@ const InputGroup = styled.div`
 `
 const Form = styled.form`
   display: flex;
-  justify-content: space-around;
+  gap:1rem;
   color: #c3c3c3;
   font-size:1.2rem;
 `
@@ -191,7 +191,7 @@ function App() {
       <Form >
         <InputGroup>
           <WrapInput>
-            <Input type="number" name='a' value={border[0]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
+            <Input type="number" name='a' value={border[0]} onChange={(e) => handleSubmit(e)} max='99' min='0' />
             <p>%</p>
           </WrapInput>
           <P color='#de36c0'>
@@ -200,7 +200,7 @@ function App() {
         </InputGroup>
         <InputGroup>
           <WrapInput>
-            <Input type="number" name='b' value={border[1]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
+            <Input type="number" name='b' value={border[1]} onChange={(e) => handleSubmit(e)} max='99' min='0' />
             <p>%</p>
           </WrapInput>
           <P color='#9536de'>
@@ -209,7 +209,7 @@ function App() {
         </InputGroup>
         <InputGroup>
           <WrapInput>
-            <Input type="number" name='c' value={border[2]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
+            <Input type="number" name='c' value={border[2]} onChange={(e) => handleSubmit(e)} max='99' min='0' />
             <p>%</p>
           </WrapInput>
           <P color='#deb536'>
@@ -218,7 +218,7 @@ function App() {
         </InputGroup>
         <InputGroup>
           <WrapInput>
-            <Input type="number" name='d' value={border[3]} onChange={(e) => handleSubmit(e)} max='100' min='0' />
+            <Input type="number" name='d' value={border[3]} onChange={(e) => handleSubmit(e)} max='99' min='0' />
             <p>%</p>
           </WrapInput>
           <P color='#36afde'>
