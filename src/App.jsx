@@ -2,8 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { Layout } from './components/index'
 
-const inicialState = [10, 10, 10, 10]
-
+const inicialState = [8, 8, 8, 8]
 
 const Cuadrado = styled.div`
   display: grid;
@@ -167,7 +166,7 @@ function App() {
     //css.select();
     //copyText.setSelectionRange(0, 99999); /* For mobile devices */
     navigator.clipboard.writeText(css)
-    setMessage('Css copiado!!!')
+    setMessage('Css Copiado!!!')
     setTimeout(() => setMessage(''), 3000)
 
 
