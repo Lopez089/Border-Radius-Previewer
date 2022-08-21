@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Layout } from './components/index'
 
 const inicialState = [8, 8, 8, 8]
@@ -37,6 +37,106 @@ const WrapeerSquare = styled.div`
 const P = styled.p`
   color:${prop => prop.color};
   font-weight:bold ;
+`
+const WrapLetter = styled.div`
+  /* grid-column: 2/4;
+  grid-row: 1; */
+  /* ${props => props.verticalLeft
+    ? css`
+      
+      grid-column: 1/1;
+      grid-row: 2;
+  `
+    : props.verticaRight
+      ? css`
+      grid-column: 4/4;
+      grid-row: 2;
+    
+  `
+      : null
+  } */
+  padding:1px;
+  ${props => props.horizontalTop
+    ? css`
+    
+        grid-column: 2/4;
+        grid-row: 1; 
+        
+      }
+  `
+    : null
+  }
+
+  ${props => props.horizontalBotton
+    ? css`
+
+          grid-column: 2/4;
+          grid-row: 4; 
+        }
+    `
+    : null
+  }
+
+  ${props => props.verticalLeft
+    ? css`
+        grid-column: 1/2;
+        grid-row: 2/4;
+        flex-direction: column;
+        padding:2px;
+      }
+
+  `
+    : null
+  }
+
+${props => props.verticalRight
+    ? css`
+        grid-column: 4/4;
+        grid-row: 2/4;
+        flex-direction: column;
+        align-items: center;
+      }
+
+  `
+    : null
+  }
+
+  display: flex;
+  justify-content: space-between;
+  
+
+
+
+`
+const Letter = styled.div`
+  ${props => props.top
+    ? css`
+        border-top : 2px solid ${props => props.color};
+        width: ${props => props.w};
+      `
+    : props.bottom
+      ? css`
+        border-bottom: 2px solid ${props => props.color};
+        width: ${props => props.w};
+      `
+      : props.right
+        ? css`
+          border-right: 2px solid ${props => props.color};
+          height: ${props => props.w};
+          width:98%;
+      `
+        : props.left
+          ? css`
+            border-left: 2px solid ${props => props.color};
+            height: ${props => props.w};
+            width:98%;
+      `
+          : null
+  }
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  
 `
 
 const ATop = styled.div`
@@ -175,18 +275,26 @@ function App() {
   return (
     <Layout>
       <WrapeerSquare>
-        <ATop><P color='#de36c0'>a</P></ATop>
-        <BTop><P color='#9536de'>b</P></BTop>
-        <ALeft><P color='#de36c0'>a</P></ALeft>
-        <BRight><P color='#9536de'>b</P></BRight>
+        <WrapLetter horizontalTop>
+          <Letter bottom w={`${border[0]}%`} color='#de36c0'><P color='#de36c0'>a</P></Letter>
+          <Letter bottom w={`${border[1]}%`} color='#9536de'><P color='#9536de'>b</P></Letter>
+        </WrapLetter>
+        <WrapLetter verticalLeft>
+          <Letter right w={`${border[0]}%`} color='#de36c0'><P color='#de36c0'>a</P></Letter>
+          <Letter right w={`${border[3]}%`} color='#36afde'><P color='#36afde'>d</P></Letter>
+        </WrapLetter>
         <OutlineSquare />
         <Cuadrado border={border} >
           <P color='#9536de'>{message}</P>
         </Cuadrado>
-        <DLeft><P color='#deb536'>d</P></DLeft>
-        <CRight><P color='#36afde'>c</P></CRight>
-        <DButton><P color='#deb536'>d</P></DButton>
-        <CButton><P color='#36afde'>c</P></CButton>
+        <WrapLetter verticalRight>
+          <Letter left w={`${border[1]}%`} color='#9536de'><P color='#9536de'>b</P></Letter>
+          <Letter left w={`${border[2]}%`} color='#deb536'><P color='#deb536'>c</P></Letter>
+        </WrapLetter>
+        <WrapLetter horizontalBotton>
+          <Letter top w={`${border[3]}%`} color='#36afde'><P color='#36afde'>d</P></Letter>
+          <Letter top w={`${border[2]}%`} color='#deb536'><P color='#deb536'>c</P></Letter>
+        </WrapLetter>
       </WrapeerSquare>
       <Form >
         <InputGroup>
