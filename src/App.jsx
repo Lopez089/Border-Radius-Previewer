@@ -241,7 +241,6 @@ const Button = styled.button`
 
 function App() {
   const [border, setBorder] = useBorderRadius()
-  console.log("🚀 ~ file: App.jsx ~ line 244 ~ App ~ border", border)
   const [message, setMessage] = useState('')
 
   const handleSubmit = (e) => {
@@ -258,13 +257,12 @@ function App() {
 
     const newObj = { ...obj, [name]: Number(value) }
     const arr = [newObj.a, newObj.b, newObj.c, newObj.d]
-    localStorage.setItem('borderRadius', arr)
+    localStorage.setItem('borderRadius', JSON.stringify(arr))
     setBorder(arr)
   }
 
   const handleCopy = () => {
     const css = `border-radius:${border.toString().replaceAll(',', '% ').concat('%')};`
-    console.log("🚀 ~ file: App.jsx ~ line 36 ~ handleCopy ~ css", css)
     //css.select();
     //copyText.setSelectionRange(0, 99999); /* For mobile devices */
     navigator.clipboard.writeText(css)

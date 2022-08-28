@@ -7,7 +7,7 @@ export const useBorderRadius = () => {
     useEffect(() => {
         let data = localStorage.getItem('borderRadius')
 
-        if (data) setBorder(data)
+        if (data) setBorder(JSON.parse(data))
         if (!data) setBorder(inicialState)
     }, [])
 
