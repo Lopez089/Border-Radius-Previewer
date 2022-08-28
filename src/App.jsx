@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { Layout } from './components/index'
+import { useBorderRadius } from './hooks/useBorderRadius'
 
-const inicialState = [8, 8, 8, 8]
 
 const Cuadrado = styled.div`
   display: grid;
@@ -240,7 +240,7 @@ const Button = styled.button`
   `
 
 function App() {
-  const [border, setBorder] = useState(inicialState)
+  const [border] = useBorderRadius()
   const [message, setMessage] = useState('')
 
   const handleSubmit = (e) => {
