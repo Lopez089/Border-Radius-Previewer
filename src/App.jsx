@@ -240,7 +240,7 @@ const Button = styled.button`
   `
 
 function App() {
-  const [border] = useBorderRadius()
+  const [border, setBorder] = useBorderRadius()
   const [message, setMessage] = useState('')
 
   const handleSubmit = (e) => {

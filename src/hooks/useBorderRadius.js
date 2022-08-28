@@ -11,5 +11,5 @@ export const useBorderRadius = () => {
         if (!data) setBorder(inicialState)
     }, [])
 
-    return [border]
+    return [border, setBorder]
 }
