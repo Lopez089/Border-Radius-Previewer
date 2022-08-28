@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { Layout } from './components/index'
 import { useBorderRadius } from './hooks/useBorderRadius'
-
 
 const Cuadrado = styled.div`
   display: grid;
@@ -239,14 +238,13 @@ const Button = styled.button`
   display:grid;
   `
 
-function App() {
+const App = () => {
   const [border, setBorder] = useBorderRadius()
   const [message, setMessage] = useState('')
 
   const handleSubmit = (e) => {
     const name = e.target.name
     const value = e.target.value
-
 
     const obj = {
       a: border[0],
@@ -263,13 +261,11 @@ function App() {
 
   const handleCopy = () => {
     const css = `border-radius:${border.toString().replaceAll(',', '% ').concat('%')};`
-    //css.select();
-    //copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    // css.select();
+    // copyText.setSelectionRange(0, 99999); /* For mobile devices */
     navigator.clipboard.writeText(css)
     setMessage('Css Copiado!!!')
     setTimeout(() => setMessage(''), 3000)
-
-
   }
 
   return (
