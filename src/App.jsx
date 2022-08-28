@@ -241,6 +241,7 @@ const Button = styled.button`
 
 function App() {
   const [border, setBorder] = useBorderRadius()
+  console.log("🚀 ~ file: App.jsx ~ line 244 ~ App ~ border", border)
   const [message, setMessage] = useState('')
 
   const handleSubmit = (e) => {
@@ -257,6 +258,7 @@ function App() {
 
     const newObj = { ...obj, [name]: Number(value) }
     const arr = [newObj.a, newObj.b, newObj.c, newObj.d]
+    localStorage.setItem('borderRadius', arr)
     setBorder(arr)
   }
 
