@@ -1,17 +1,7 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import { Layout, Square } from './components/index'
+import { Layout, Square, OutlineSquare } from './components/index'
 import { useBorderRadius } from './hooks/useBorderRadius'
-
-const OutlineSquare = styled.div`
- grid-column: 2 / 4;
-  grid-row: 2/4;
-  position:absolute;
-  width:248px;
-  height:248px;
-  border:1px dotted gray;
-  z-index:-9999;
-`
 
 const WrapeerSquare = styled.div`
   position: relative;
