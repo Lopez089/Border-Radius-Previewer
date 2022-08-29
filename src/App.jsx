@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import { Layout, Square, OutlineSquare, WrapeerSquare } from './components/index'
 import { useBorderRadius } from './hooks/useBorderRadius'
+import {
+  Layout,
+  Square,
+  OutlineSquare,
+  WrapeerSquare,
+  P
+} from './components/index'
 
-const P = styled.p`
-  color:${prop => prop.color};
-  font-weight:bold ;
-`
 const WrapLetter = styled.div`
   /* grid-column: 2/4;
   grid-row: 1; */
