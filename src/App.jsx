@@ -1,21 +1,8 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import { Layout } from './components/index'
+import { Layout, Square } from './components/index'
 import { useBorderRadius } from './hooks/useBorderRadius'
 
-const Cuadrado = styled.div`
-  display: grid;
-  justify-content:center;
-  align-items:center;
-  grid-column: 2 / 4;
-  grid-row: 2/4;
-  width:250px;
-  height:250px;
-  border-radius: ${prop => prop.border.toString().replaceAll(',', '% ').concat('%')};
-  background-color: #8BC6EC;
-  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
-
-`
 const OutlineSquare = styled.div`
  grid-column: 2 / 4;
   grid-row: 2/4;
@@ -280,9 +267,9 @@ const App = () => {
           <Letter right w={`${border[3]}%`} color='#36afde'><P color='#36afde'>d</P></Letter>
         </WrapLetter>
         <OutlineSquare />
-        <Cuadrado border={border} >
+        <Square border={border} >
           <P color='#9536de'>{message}</P>
-        </Cuadrado>
+        </Square>
         <WrapLetter verticalRight>
           <Letter left w={`${border[1]}%`} color='#9536de'><P color='#9536de'>b</P></Letter>
           <Letter left w={`${border[2]}%`} color='#deb536'><P color='#deb536'>c</P></Letter>

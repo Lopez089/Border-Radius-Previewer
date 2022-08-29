@@ -1,3 +1,4 @@
 import { Layout } from './layout'
+import { Square } from './square'
 
-export { Layout }
+export { Layout, Square }
