@@ -1,14 +1,7 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import { Layout, Square, OutlineSquare } from './components/index'
+import { Layout, Square, OutlineSquare, WrapeerSquare } from './components/index'
 import { useBorderRadius } from './hooks/useBorderRadius'
-
-const WrapeerSquare = styled.div`
-  position: relative;
-  display: grid;
-  grid-template-columns: 30px repeat(2, 1fr) 30px;
-  grid-template-rows: 30px repeat(2, 1fr) 30px;
-`
 
 const P = styled.p`
   color:${prop => prop.color};
