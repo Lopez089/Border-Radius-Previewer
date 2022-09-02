@@ -6,79 +6,10 @@ import {
   Square,
   OutlineSquare,
   WrapeerSquare,
-  P
+  P,
+  WrapLetter
 } from './components/index'
 
-const WrapLetter = styled.div`
-  /* grid-column: 2/4;
-  grid-row: 1; */
-  /* ${props => props.verticalLeft
-    ? css`
-      
-      grid-column: 1/1;
-      grid-row: 2;
-  `
-    : props.verticaRight
-      ? css`
-      grid-column: 4/4;
-      grid-row: 2;
-    
-  `
-      : null
-  } */
-  padding:1px;
-  ${props => props.horizontalTop
-    ? css`
-    
-        grid-column: 2/4;
-        grid-row: 1; 
-        
-      }
-  `
-    : null
-  }
-
-  ${props => props.horizontalBotton
-    ? css`
-
-          grid-column: 2/4;
-          grid-row: 4; 
-        }
-    `
-    : null
-  }
-
-  ${props => props.verticalLeft
-    ? css`
-        grid-column: 1/2;
-        grid-row: 2/4;
-        flex-direction: column;
-        padding:2px;
-      }
-
-  `
-    : null
-  }
-
-${props => props.verticalRight
-    ? css`
-        grid-column: 4/4;
-        grid-row: 2/4;
-        flex-direction: column;
-        align-items: center;
-      }
-
-  `
-    : null
-  }
-
-  display: flex;
-  justify-content: space-between;
-  
-
-
-
-`
 const Letter = styled.div`
   ${props => props.top
     ? css`
