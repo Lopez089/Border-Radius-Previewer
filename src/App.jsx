@@ -8,15 +8,10 @@ import {
   WrapeerSquare,
   P,
   WrapLetter,
-  Letter
+  Letter,
+  InputGroup
 } from './components/index'
 
-const InputGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-`
 const Form = styled.form`
   display: flex;
   gap:1rem;
