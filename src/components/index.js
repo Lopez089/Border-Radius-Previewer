@@ -7,6 +7,7 @@ import { WrapLetter } from './WrapLetter'
 import { Letter } from './Letter'
 import { InputGroup } from './inputGroup'
 import { Form } from './form'
+import { WrapInput } from './wrapInput'
 
 export {
   Layout,
@@ -17,5 +18,6 @@ export {
   WrapLetter,
   Letter,
   InputGroup,
-  Form
+  Form,
+  WrapInput
 }

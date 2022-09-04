@@ -10,13 +10,10 @@ import {
   WrapLetter,
   Letter,
   InputGroup,
-  Form
+  Form,
+  WrapInput
 } from './components/index'
 
-const WrapInput = styled.div`
-  display:flex;
-  align-items:center;
-`
 const Input = styled.input`
   text-align: right;
   width: 21px;
