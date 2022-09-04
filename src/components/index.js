@@ -10,6 +10,7 @@ import { Form } from './form'
 import { WrapInput } from './wrapInput'
 import { Input } from './input'
 import { Button } from './button'
+import { BoxSquare } from './boxSquare'
 
 export {
   Layout,
@@ -23,5 +24,6 @@ export {
   Form,
   WrapInput,
   Input,
-  Button
+  Button,
+  BoxSquare
 }
