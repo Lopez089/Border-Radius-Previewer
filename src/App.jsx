@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useBorderRadius } from './hooks/useBorderRadius'
+import { handleSubmit } from './utils/index'
 import {
   Layout,
   Square,
@@ -18,23 +19,6 @@ import {
 const App = () => {
   const [border, setBorder] = useBorderRadius()
   const [message, setMessage] = useState('')
-
-  const handleSubmit = (e) => {
-    const name = e.target.name
-    const value = e.target.value
-
-    const obj = {
-      a: border[0],
-      b: border[1],
-      c: border[2],
-      d: border[3]
-    }
-
-    const newObj = { ...obj, [name]: Number(value) }
-    const arr = [newObj.a, newObj.b, newObj.c, newObj.d]
-    localStorage.setItem('borderRadius', JSON.stringify(arr))
-    setBorder(arr)
-  }
 
   const handleCopy = () => {
     const css = `border-radius:${border.toString().replaceAll(',', '% ').concat('%')};`
@@ -72,7 +56,7 @@ const App = () => {
       <Form >
         <InputGroup>
           <WrapInput>
-            <Input type="number" name='a' value={border[0]} onChange={(e) => handleSubmit(e)} max='99' min='0' />
+            <Input type="number" name='a' value={border[0]} onChange={(e) => handleSubmit(e, border, setBorder)} max='99' min='0' />
             <p>%</p>
           </WrapInput>
           <P color='#de36c0'>
@@ -81,7 +65,7 @@ const App = () => {
         </InputGroup>
         <InputGroup>
           <WrapInput>
-            <Input type="number" name='b' value={border[1]} onChange={(e) => handleSubmit(e)} max='99' min='0' />
+            <Input type="number" name='b' value={border[1]} onChange={(e) => handleSubmit(e, border, setBorder)} max='99' min='0' />
             <p>%</p>
           </WrapInput>
           <P color='#9536de'>
@@ -90,7 +74,7 @@ const App = () => {
         </InputGroup>
         <InputGroup>
           <WrapInput>
-            <Input type="number" name='c' value={border[2]} onChange={(e) => handleSubmit(e)} max='99' min='0' />
+            <Input type="number" name='c' value={border[2]} onChange={(e) => handleSubmit(e, border, setBorder)} max='99' min='0' />
             <p>%</p>
           </WrapInput>
           <P color='#deb536'>
@@ -99,7 +83,7 @@ const App = () => {
         </InputGroup>
         <InputGroup>
           <WrapInput>
-            <Input type="number" name='d' value={border[3]} onChange={(e) => handleSubmit(e)} max='99' min='0' />
+            <Input type="number" name='d' value={border[3]} onChange={(e) => handleSubmit(e, border, setBorder)} max='99' min='0' />
             <p>%</p>
           </WrapInput>
           <P color='#36afde'>
