@@ -6,5 +6,16 @@ import { P } from './P'
 import { WrapLetter } from './WrapLetter'
 import { Letter } from './Letter'
 import { InputGroup } from './inputGroup'
+import { Form } from './form'
 
-export { Layout, Square, OutlineSquare, WrapeerSquare, P, WrapLetter, Letter, InputGroup }
+export {
+  Layout,
+  Square,
+  OutlineSquare,
+  WrapeerSquare,
+  P,
+  WrapLetter,
+  Letter,
+  InputGroup,
+  Form
+}

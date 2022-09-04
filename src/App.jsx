@@ -9,15 +9,10 @@ import {
   P,
   WrapLetter,
   Letter,
-  InputGroup
+  InputGroup,
+  Form
 } from './components/index'
 
-const Form = styled.form`
-  display: flex;
-  gap:1rem;
-  color: #c3c3c3;
-  font-size:1.2rem;
-`
 const WrapInput = styled.div`
   display:flex;
   align-items:center;
