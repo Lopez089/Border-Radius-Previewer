@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useBorderRadius } from './hooks/useBorderRadius'
-import { handleSubmit } from './utils/index'
+import { handleSubmit, handleCopy } from './utils/index'
 import {
   Layout,
   Square,
@@ -19,15 +19,6 @@ import {
 const App = () => {
   const [border, setBorder] = useBorderRadius()
   const [message, setMessage] = useState('')
-
-  const handleCopy = () => {
-    const css = `border-radius:${border.toString().replaceAll(',', '% ').concat('%')};`
-    // css.select();
-    // copyText.setSelectionRange(0, 99999); /* For mobile devices */
-    navigator.clipboard.writeText(css)
-    setMessage('Css Copiado!!!')
-    setTimeout(() => setMessage(''), 3000)
-  }
 
   return (
     <Layout>
@@ -91,7 +82,7 @@ const App = () => {
           </P>
         </InputGroup>
       </Form>
-      <Button onClick={() => handleCopy()}>Copiar</Button>
+      <Button onClick={() => handleCopy(border, setMessage)}>Copiar</Button>
     </Layout>
   )
 }

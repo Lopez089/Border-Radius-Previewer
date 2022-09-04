@@ -14,3 +14,12 @@ export const handleSubmit = (e, border, setBorder) => {
   localStorage.setItem('borderRadius', JSON.stringify(arr))
   setBorder(arr)
 }
+
+export const handleCopy = (border, setMessage) => {
+  const css = `border-radius:${border.toString().replaceAll(',', '% ').concat('%')};`
+  // css.select();
+  // copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  navigator.clipboard.writeText(css)
+  setMessage('Css Copiado!!!')
+  setTimeout(() => setMessage(''), 3000)
+}
