@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import { useBorderRadius } from './hooks/useBorderRadius'
 import {
   Layout,
@@ -12,18 +11,9 @@ import {
   InputGroup,
   Form,
   WrapInput,
-  Input
+  Input,
+  Button
 } from './components/index'
-
-const Button = styled.button`
-  font-family: 'Open Sans', sans-serif;
-  color:white;
-  background-color:#36AFDE;
-  border-radius: .5rem;
-  border:1px solid #8BC6EC;
-  padding:.5rem 2rem;
-  display:grid;
-  `
 
 const App = () => {
   const [border, setBorder] = useBorderRadius()
