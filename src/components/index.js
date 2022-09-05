@@ -14,6 +14,7 @@ import { BoxSquare } from './boxSquare'
 import { WrapFrom } from './wrapForm'
 import { Footer } from './footer'
 import { Main } from './main'
+import { Nav } from './nav'
 
 export {
   Layout,
@@ -31,5 +32,6 @@ export {
   BoxSquare,
   WrapFrom,
   Footer,
-  Main
+  Main,
+  Nav
 }

@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { useBorderRadius } from './hooks/useBorderRadius'
+import logo from './assets/img/logo.png'
 import {
   Layout,
   BoxSquare,
   WrapFrom,
   Footer,
-  Main
+  Main,
+  Nav
 } from './components/index'
 
 const App = () => {
@@ -14,7 +16,9 @@ const App = () => {
 
   return (
     <Layout>
-      <nav>hola soy el menu</nav>
+      <Nav>
+        <img src={logo} alt="logo" />
+      </Nav>
       <Main>
         <BoxSquare border={border} message={message} />
         <WrapFrom border={border} setBorder={setBorder} setMessage={setMessage} />
