@@ -4,7 +4,8 @@ import {
   Layout,
   BoxSquare,
   WrapFrom,
-  Footer
+  Footer,
+  Main
 } from './components/index'
 
 const App = () => {
@@ -13,10 +14,13 @@ const App = () => {
 
   return (
     <Layout>
-      <BoxSquare border={border} message={message} />
-      <WrapFrom border={border} setBorder={setBorder} setMessage={setMessage} />
+      <nav>hola soy el menu</nav>
+      <Main>
+        <BoxSquare border={border} message={message} />
+        <WrapFrom border={border} setBorder={setBorder} setMessage={setMessage} />
+      </Main>
       <Footer>
-        by <a href="https://www.linkedin.com/in/juanlopezaragon/" target="_blank" rel="noreferrer" >Juan López</a> | 2022
+        by  <a href="https://www.linkedin.com/in/juanlopezaragon/" target="_blank" rel="noreferrer" > Juan López</a> | 2022
       </Footer>
     </Layout>
   )
