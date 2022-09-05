@@ -3,7 +3,8 @@ import { useBorderRadius } from './hooks/useBorderRadius'
 import {
   Layout,
   BoxSquare,
-  WrapFrom
+  WrapFrom,
+  Footer
 } from './components/index'
 
 const App = () => {
@@ -14,6 +15,9 @@ const App = () => {
     <Layout>
       <BoxSquare border={border} message={message} />
       <WrapFrom border={border} setBorder={setBorder} setMessage={setMessage} />
+      <Footer>
+        by <a href="https://www.linkedin.com/in/juanlopezaragon/" target="_blank" rel="noreferrer" >Juan López</a> | 2022
+      </Footer>
     </Layout>
   )
 }

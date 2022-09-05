@@ -12,6 +12,7 @@ import { Input } from './input'
 import { Button } from './button'
 import { BoxSquare } from './boxSquare'
 import { WrapFrom } from './wrapForm'
+import { Footer } from './footer'
 
 export {
   Layout,
@@ -27,5 +28,6 @@ export {
   Input,
   Button,
   BoxSquare,
-  WrapFrom
+  WrapFrom,
+  Footer
 }
